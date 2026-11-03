@@ -1,0 +1,54 @@
+{
+  "id": "067",
+  "slug": "067-seed-quality-classifier",
+  "name": "Seed Quality Classifier",
+  "domain": "Agriculture & food systems",
+  "domain_slug": "agriculture",
+  "task_type": "classification",
+  "target": "p067_seed_quality_classifier_outcome_label",
+  "features": [
+    "p067_seed_quality_classifier_soil_ph",
+    "p067_seed_quality_classifier_nitrogen_ppm",
+    "p067_seed_quality_classifier_phosphorus_ppm",
+    "p067_seed_quality_classifier_potassium_ppm",
+    "p067_seed_quality_classifier_soil_moisture_pct",
+    "p067_seed_quality_classifier_sunlight_hours",
+    "p067_seed_quality_classifier_temperature_c",
+    "p067_seed_quality_classifier_rainfall_mm",
+    "p067_seed_quality_classifier_seed_density",
+    "p067_seed_quality_classifier_pest_pressure"
+  ],
+  "model_key": "decision-tree",
+  "model_class": "DecisionTreeClassifier",
+  "serving": "Flask",
+  "extension_focus": "SHAP model explanations",
+  "seed": 202667,
+  "rows": 457694,
+  "dataset_bytes": 39822223,
+  "model_training": {
+    "source": "synthetic dataset bundled with this project",
+    "sample_rows": 5000,
+    "fit_rows": 4000,
+    "holdout_rows": 1000,
+    "metrics": {
+      "accuracy": 0.769,
+      "macro_f1": 0.769,
+      "roc_auc": 0.8234
+    },
+    "artifact": "models/model.joblib"
+  },
+  "gui_feature": {
+    "mode": "presets",
+    "title": "Seed Quality Classifier · Signal profile comparison",
+    "description": "Load three distinct synthetic input profiles for Seed Quality Classifier and compare their model outputs.",
+    "focus_feature": "p067_seed_quality_classifier_temperature_c",
+    "mode_title": "Signal profile comparison"
+  },
+  "gui": {
+    "frontend": "HTML/CSS/JavaScript",
+    "backend": "FastAPI",
+    "standalone": true
+  },
+  "model_artifact": "models/model.joblib",
+  "model_bytes": 30846
+}
